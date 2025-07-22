@@ -1,7 +1,8 @@
-class AddTimestampsToArticles < ActiveRecord::Migration[7.1]
+class AddTimestampsToArticles < ActiveRecord::Migration[6.1]
   def change
-    add_column :articles, :created_at, :datetime
-    add_column :articles, :updated_at, :datetime
-
+    change_table :articles do |t|
+      t.datetime :created_at, null: true unless column_exists?(:articles, :created_at)
+      t.datetime :updated_at, null: true unless column_exists?(:articles, :updated_at)
+    end
   end
 end

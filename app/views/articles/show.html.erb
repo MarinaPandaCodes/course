@@ -1,3 +1,16 @@
+<h1>Showing Article details</h1>
+<p><strong>Title:</strong><%= @article.title %></p>
+<p><strong>Description:</strong><%= @article.description %></p>
+
+  class AddTimestampsToArticles < ActiveRecord::Migration[6.1]
+  def change
+    change_table :articles do |t|
+      t.datetime :created_at, null: true unless column_exists?(:articles, :created_at)
+      t.datetime :updated_at, null: true unless column_exists?(:articles, :updated_at)
+    end
+  end
+end
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @article %>
