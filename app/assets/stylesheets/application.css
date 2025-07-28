@@ -122,3 +122,30 @@ button, .button {
 button:hover, .button:hover {
   background-color: #066591;
 }
+
+
+
+
+
+/* Error box styling */
+.error-box {
+  background-color: #b71c1c;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(183, 28, 28, 0.6);
+}
+
+.error-box h2 {
+  margin-top: 0;
+}
+
+.error-box ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.error-box li {
+  list-style-type: circle;
+}

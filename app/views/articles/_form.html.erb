@@ -1,81 +1,26 @@
 <% if @article.errors.any? %>
- 
-    <h2>The following errors prevented the article from being saved</h2>
-
+  <div class="error-box">
+    <h2>🚫 The following errors prevented the article from being saved:</h2>
     <ul>
       <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-
+  </div>
 <% end %>
 
-
-
-
 <%= form_with model: @article, local: true do |f| %>
-
-  <p>
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+    <%= f.text_field :title, class: "form-input" %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-  <%= f.submit %><br>
-  </p>
-  <% end %>
+    <%= f.text_area :description, class: "form-textarea" %>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="form-group center">
+    <%= f.submit @article.persisted? ? "Update Article" : "Create Article", class: "button create" %>
+  </div>
+<% end %>

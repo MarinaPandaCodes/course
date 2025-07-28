@@ -3,6 +3,12 @@
   <head>
     <title>Course</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <nav style="margin-bottom: 20px;">
+  <%= link_to "Home", root_path %> |
+  <%= link_to "Articles", articles_path %> |
+  <%= link_to "About", about_path %>
+</nav>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

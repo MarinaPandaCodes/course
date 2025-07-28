@@ -1,4 +1,16 @@
-<h1>This is the About  Page</h1>
+<h1>About This App</h1>
 
-<%= link_to 'Articles listing', articles_path %>  |
-<%= link_to 'Home page', root_path %>  
+<p style="font-size: 1.1rem; line-height: 1.6; max-width: 800px;">
+  Welcome to our application! This is a simple blog platform built with Ruby on Rails where users can read, create, and manage articles.
+</p>
+
+<ul style="margin-top: 20px; font-size: 1rem;">
+  <li>📚 Built with Ruby on Rails</li>
+  <li>🖊️ Create, edit, and delete articles</li>
+  <li>💬 Share your thoughts</li>
+  <li>🔍 Explore the latest content</li>
+</ul>
+
+<p style="margin-top: 30px;">
+  Want to see what's new? <%= link_to "Browse Articles", articles_path, class: "button" %>
+</p>

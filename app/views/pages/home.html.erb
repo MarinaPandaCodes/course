@@ -1,4 +1,23 @@
-<h1>This is the home page</h1>
+<!-- app/views/pages/home.html.erb -->
 
-<%= link_to 'Articles listing', articles_path %>  |
-<%= link_to 'About page', about_path %>  
+<h1 style="text-align: center; margin-top: 40px;">Welcome to My Blog</h1>
+
+<p style="text-align: center; font-size: 1.2rem; color: #555;">
+  Discover interesting articles, share your thoughts, and explore ideas.
+</p>
+
+<div style="text-align: center; margin-top: 30px;">
+  <%= link_to "View All Articles", articles_path, class: "button" %>
+</div>
+
+<hr style="margin: 40px 0;">
+
+<h2>Latest Articles</h2>
+
+<% @latest_articles.each do |article| %>
+  <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+    <h3><%= link_to article.title, article_path(article) %></h3>
+    <p><%= truncate(article.description, length: 150) %></p>
+    <%= link_to "Read More", article_path(article), style: "color: blue;" %>
+  </div>
+<% end %>
