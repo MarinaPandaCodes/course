@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Course</title>
+    <title>BlogCourse</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <nav style="margin-bottom: 20px;">
-  <%= link_to "Home", root_path %> |
-  <%= link_to "Articles", articles_path %> |
-  <%= link_to "About", about_path %>
-</nav>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,6 +11,17 @@
   </head>
 
   <body>
+  <nav style="background-color: #333; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+  <div style="color: white; font-size: 1.5rem; font-weight: bold;">
+    <%= link_to "My BlogCourse", root_path, style: "color: white; text-decoration: none;" %>
+  </div>
+
+  <div>
+    <%= link_to "Home", root_path, style: "color: white; margin-right: 15px; text-decoration: none;" %>
+    <%= link_to "Articles", articles_path, style: "color: white; margin-right: 15px; text-decoration: none;" %>
+    <%= link_to "About", about_path, style: "color: white; margin-right: 15px; text-decoration: none;" %>
+  </div>
+</nav>
     <%= render "layouts/messages" %>
     <%= yield %>
   </body>
