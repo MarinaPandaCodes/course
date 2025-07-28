@@ -1,4 +1,7 @@
-  <% flash.each do |name, msg| %>
+ <% flash.each do |name, msg| %>
+  <div class="flash <%= name %>">
     <%= msg %>
-    <% end %>
+  </div>
+<% end %>
+
     
